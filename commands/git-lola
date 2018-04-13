@@ -25,4 +25,4 @@
 # Usage:
 #   git lol
 
-git log --graph --decorate --pretty=format:'%C(red)%H%C(reset) %C(yellow)%d%C(reset) %s [%C(green)%an <%aE>, %C(bold black)%ai%C(reset)]' --abbrev-commit --date=relative --all $@
+git log --graph --decorate --pretty=format:'%C(red)%H%C(reset) %C(yellow)%d%C(reset) %s [%C(green)%an <%aE>, %C(bold black)%ai%C(reset)]' --abbrev-commit --date=relative --all --no-merges $@

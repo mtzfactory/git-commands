@@ -65,6 +65,17 @@ Permanently blows-away any uncommitted changes. Resets to the position of the la
 git nuke
 ```
 
+### `git open`
+Opens the web browser for the repository.
+
+`{remote}` is optional, and the default value is the _tracking remote_. `{branch}` is optional, and the default value is the _tracking branch_.
+
+If `open` exists, then it will attempt to open the URL with the default handler. If `open` does not exist, the URL will be echoed to the output.
+
+```bash
+git open {remote} {branch}
+```
+
 ### `git tags`
 Returns a list of all tags in the repository.
 
