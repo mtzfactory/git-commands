@@ -23,11 +23,11 @@ Finds which branches/tags a particular commit is part of
 git contains 7ebcf01
 ```
 
-### `git delete`
+### `git del`
 Deletes the local copy of the branch, as well as the one on the `origin` remote.
 
 ```bash
-git delete outdated-feature-branch
+git del outdated-feature-branch
 ```
 
 ### `git delta`
