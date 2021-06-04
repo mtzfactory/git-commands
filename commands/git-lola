@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-# Copyright (c) 2014 Ryan Parman <http://ryanparman.com>
+# Copyright (c) 2014-2021 Ryan Parman <http://ryanparman.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,6 @@
 # http://opensource.org/licenses/MIT
 
 # Usage:
-#   git lol
+#   git lola
 
 git log --graph --decorate --pretty=format:'%C(red)%H%C(reset) %C(yellow)%d%C(reset) %s [%C(green)%an <%aE>, %C(bold black)%ai%C(reset)]' --abbrev-commit --date=relative --all --no-merges $@

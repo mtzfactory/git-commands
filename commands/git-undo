@@ -4,4 +4,4 @@
 # Usage:
 #   git undo {# of commits}
 
-git reset --soft $(git rev-parse --abbrev-ref HEAD)@{${1-1}};
+git reset --soft "$(git rev-parse --abbrev-ref HEAD)@{${1-1}}"

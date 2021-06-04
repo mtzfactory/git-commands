@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-# Copyright (c) 2014 Ryan Parman <http://ryanparman.com>
+# Copyright (c) 2014-2021 Ryan Parman <http://ryanparman.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,6 @@
 # Usage:
 #   git delta $branch
 
-git cherry -v $1 master | grep '^+' | awk '{print $2}' | xargs git show \
+git cherry -v "$1" master | grep '^+' | awk '{print $2}' | xargs git show \
     --pretty=format:'%C(red)%H%C(reset) %C(yellow)%d%C(reset) %s [%C(green)%an, %C(bold black)%cr%C(reset)]' \
-    --summary --no-patch --color --decorate --stat --abbrev-commit --date=relative;
+    --summary --no-patch --color --decorate --stat --abbrev-commit --date=relative

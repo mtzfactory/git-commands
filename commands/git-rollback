@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-# Copyright (c) 2014-2021 Ryan Parman <http://ryanparman.com>
+# Copyright (c) 2021 Ryan Parman <http://ryanparman.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,9 @@
 # http://opensource.org/licenses/MIT
 
 # Usage:
-#   git cm
+#   git rollback {count}
+#
+# https://gist.github.com/CrookedNumber/8964442
 
-git log --pretty=format:'%h' -n 1 | tr -d '\n'
+COUNT="${1:-1}"
+git reset --soft "HEAD~$COUNT"

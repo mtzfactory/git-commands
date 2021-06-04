@@ -2,7 +2,16 @@
 
 ## General-use
 
+### `git cherry-pit`
+
+The inverse of `cherry-pick`. Removes a single commit from a branch. Requires a force-push to the remote.
+
+```bash
+git cherry-pit 7ebcf01
+```
+
 ### `git cm` & `git cml`
+
 Gets the current commit ID. `cm` gives the short ID, and `cml` gives the long ID.
 
 ```bash
@@ -10,6 +19,7 @@ git diff $(git cml)...HEAD
 ```
 
 ### `git conflicted`
+
 Opens merge-conflicted files for editing in the editor you provide
 
 ```bash
@@ -17,6 +27,7 @@ git conflicted $EDITOR
 ```
 
 ### `git contains`
+
 Finds which branches/tags a particular commit is part of
 
 ```bash
@@ -24,6 +35,7 @@ git contains 7ebcf01
 ```
 
 ### `git del`
+
 Deletes the local copy of the branch, as well as the one on the `origin` remote.
 
 ```bash
@@ -31,14 +43,18 @@ git del outdated-feature-branch
 ```
 
 ### `git delta`
+
 Shows the commits from the current branch which are not in the specified branch.
 
 ```bash
 git delta release-branch
 ```
 
-### `git lol`, `git lola` & `git hist`
+### `git lol`, `git lola`, `git lolc`, and `git hist`
+
 `lol` is a "better" version of `git log` (e.g., long commit ID, commit message, commit author, relative timestamp). `hist` is identical, but also includes a list of all files that were changed in that commit.
+
+`lolc` is the same as `lol`, but restricts the list of commits to only the current branch.
 
 `lola` is the same as `lol`, but uses `--graph` to show branch relationships.
 
@@ -48,6 +64,7 @@ git hist
 ```
 
 ### `git long` & `git short`
+
 Gets the long/short version of a commit ID.
 
 ```bash
@@ -59,6 +76,7 @@ git short e60a01d107d0de7f97689bb311d8d8d80862e583
 ```
 
 ### `git nuke`
+
 Permanently blows-away any uncommitted changes. Resets to the position of the last commit.
 
 ```bash
@@ -66,6 +84,7 @@ git nuke
 ```
 
 ### `git open`
+
 Opens the web browser for the repository.
 
 `{remote}` is optional, and the default value is the _tracking remote_. `{branch}` is optional, and the default value is the _tracking branch_.
@@ -76,7 +95,18 @@ If `open` exists, then it will attempt to open the URL with the default handler.
 git open {remote} {branch}
 ```
 
+### `git rollback`
+
+Rolls back HEAD to an earlier commit. From there, you can choose to push the updated HEAD to a remote.
+
+```bash
+git rollback   # One
+git rollback 1 # One
+git rollback 2 # Two
+```
+
 ### `git tags`
+
 Returns a list of all tags in the repository.
 
 ```bash
@@ -84,6 +114,7 @@ git tags
 ```
 
 ### `git this`
+
 Returns the name of the current branch.
 
 ```bash
@@ -91,6 +122,7 @@ git push --set-upstream origin $(git this)
 ```
 
 ### `git track`
+
 Sets the current branch to track against the specified remote branch.
 
 ```bash
@@ -98,6 +130,7 @@ git track origin master
 ```
 
 ### `git uncommit`
+
 Uncommits the last commit in your local branch.
 
 ```bash
@@ -105,6 +138,7 @@ git uncommit
 ```
 
 ### `git unstage`
+
 Unstages (i.e., un-adds) the files you're preparing to commit.
 
 ```bash
@@ -116,6 +150,7 @@ git unstage
 ## [Hub](http://hub.github.com)
 
 ### `git clone`
+
 Clone yours — or another — project on GitHub Enterprise.
 
 ```bash
@@ -127,6 +162,7 @@ git clone ryan_parman/hub
 ```
 
 ### `git browse`
+
 See the current project's issues.
 
 ```bash
@@ -154,6 +190,7 @@ git commit -m "done with feature"
 ```
 
 ### `git fork`
+
 It's time to fork the repo!
 
 ```bash
@@ -169,6 +206,7 @@ git push YOUR_USER feature
 ```
 
 ### `git pull-request`
+
 Open a pull request for the topic branch you've just pushed.
 
 ```bash
@@ -177,6 +215,7 @@ git pull-request
 ```
 
 ### `git fetch`
+
 Fetch from multiple trusted forks, even if they don't yet exist as remotes.
 
 ```bash
@@ -187,6 +226,7 @@ git fetch johnny_bravo,ryan_parman
 ```
 
 ### `git checkout`
+
 Check out a pull request for review.
 
 ```bash
@@ -195,6 +235,7 @@ git checkout https://github.company.com/ryan_parman/hub/pull/134
 ```
 
 ### `git am`
+
 Directly apply all commits from a pull request to the current branch.
 
 ```bash
@@ -208,6 +249,7 @@ git am https://github.company.com/ryan_parman/hub/commit/177eeb8
 ```
 
 ### `git cherry-pick`
+
 Cherry-pick a GitHub URL.
 
 ```bash
@@ -218,6 +260,7 @@ git cherry-pick https://github.company.com/ryan_parman/hub/commit/177eeb8
 ```
 
 ### `git compare`
+
 Open the GitHub compare view between two releases.
 
 ```bash
@@ -227,10 +270,11 @@ git compare v0.9..v1.0
 Put compare URL for a topic branch to clipboard.
 
 ```bash
-$ git compare -u feature | pbcopy
+git compare -u feature | pbcopy
 ```
 
 ### `git create`
+
 Create a repo for a new project.
 
 ```bash
