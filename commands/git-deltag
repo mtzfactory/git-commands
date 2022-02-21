@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/usr/bin/env sh
 
 # Copyright (c) 2014-2021 Ryan Parman <http://ryanparman.com>
 #
@@ -23,6 +23,9 @@
 # http://opensource.org/licenses/MIT
 
 # Usage:
-#   <editor> $(git conflicted)
+#   git deltag {tag}
 
-git diff --name-only | uniq | xargs -I% $(git config --get core.editor) "%"
+tag="$1"
+test -z "$tag" && echo "tag required." 1>&2 && exit 1
+git tag -d "$tag"
+git push --delete origin "$tag"
