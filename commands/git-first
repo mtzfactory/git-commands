@@ -23,6 +23,6 @@
 # http://opensource.org/licenses/MIT
 
 # Usage:
-#   git root
+#   git first
 
 git rev-list --max-parents=0 HEAD
